@@ -86,7 +86,7 @@ enum ClassicGameItem << (E,limegreen) >> {
     paper
     scissors
 }
-Enum <|.. ClassicGameItem : << realizes >>
+Enum <|-- ClassicGameItem
 
 
 
@@ -94,7 +94,7 @@ enum LizardSpockGameItem << (E,limegreen) >> {
     lizard
     spock
 }
-Enum <|... LizardSpockGameItem : << realizes >>
+Enum <|--- LizardSpockGameItem
 
 
 

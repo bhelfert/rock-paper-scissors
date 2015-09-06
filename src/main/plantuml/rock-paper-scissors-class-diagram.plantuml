@@ -39,7 +39,7 @@ RunOfPlayConsolePrinter ..> RunOfPlay
 
 abstract class Game << (A,limegreen) >> {
     play()
-    {abstract} getGameRules()
+    {abstract} createGameRules()
 }
 Game .up.> GameInput
 Game --> GameRules

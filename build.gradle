@@ -1,0 +1,37 @@
+apply plugin: 'groovy'
+apply plugin: 'application'
+apply plugin: 'org.kordamp.gradle.stats'
+apply plugin: "jacoco"
+
+applicationName = 'rockPaperScissors'
+mainClassName = 'com.sevenlist.rockpaperscissors.RockPaperScissors'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.kordamp.gradle:stats-gradle-plugin:0.1.1'
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.4'
+
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+    testCompile 'cglib:cglib-nodep:3.1'
+    testCompile 'com.blogspot.toomuchcoding:spock-subjects-collaborators-extension:1.1.0'
+}
+
+jacoco {
+    toolVersion = "0.7.5.201505241946"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.6'
+}

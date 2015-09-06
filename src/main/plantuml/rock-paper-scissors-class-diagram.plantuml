@@ -1,0 +1,126 @@
+@startuml
+
+' This is a PlantUML file that describes a UML Class Diagram textually.
+' See http://plantuml.com for more information.
+
+
+
+class GameRegistry << (C, limegreen) >> {
+    registerGame()
+}
+note bottom: registers:\n* ClassicGame \n* LizardSpockGame
+
+
+
+class CommandLineParser << (C, red) >> {
+    parseCommandLine()
+}
+CommandLineParser -left-> GameRegistry
+CommandLineParser .down.> GameInput : << creates >>
+
+
+
+class RockPaperScissors << (C, white) >> {
+    {static} main()
+    runGame()
+}
+RockPaperScissors -left-> CommandLineParser
+RockPaperScissors -down-> Game
+RockPaperScissors -right-> RunOfPlayConsolePrinter
+
+
+
+class RunOfPlayConsolePrinter << (C,dodgerblue) >> {
+    printRunOfPlay()
+}
+RunOfPlayConsolePrinter ..> RunOfPlay
+
+
+
+abstract class Game << (A,limegreen) >> {
+    play()
+    {abstract} getGameRules()
+}
+Game .up.> GameInput
+Game --> GameRules
+Game -left-> "*" Enum
+Game .right.> RunOfPlay : << creates >>
+
+
+
+class GameRules << (C,limegreen) >> {
+    addRule()
+    beats()
+    getBeatsDescription()
+}
+
+
+
+class GameInput << (C,red) >> {
+    game
+    gameItem
+}
+
+
+
+class ClassicGame << (C,limegreen) >> {
+}
+Game <|-- ClassicGame
+ClassicGame .right.> GameRules : << creates >>
+
+
+
+class LizardSpockGame << (C,limegreen) >> {
+}
+ClassicGame <|-- LizardSpockGame
+LizardSpockGame ..> GameRules : << creates >>
+
+
+
+abstract class Enum << (E,limegreen) >>
+
+
+
+enum ClassicGameItem << (E,limegreen) >> {
+    rock
+    paper
+    scissors
+}
+Enum <|.. ClassicGameItem : << realizes >>
+
+
+
+enum LizardSpockGameItem << (E,limegreen) >> {
+    lizard
+    spock
+}
+Enum <|... LizardSpockGameItem : << realizes >>
+
+
+
+class RunOfPlay << (C,limegreen) >> {
+    itemPlayer1
+    itemPlayer2
+    gameResultReason
+}
+RunOfPlay -right-> GameResult : gameResult
+
+
+
+enum GameResult << (E,limegreen) >> {
+    Player1Wins
+    Player2Wins
+    Tie
+}
+
+
+
+legend left
+  Color code:
+  *<b>red</b>: input (CLI)
+  *<b>green</b>: processing (game)
+  *<b>blue</b>: output (presentation)
+  *<b>white</b>: controller
+endlegend
+
+@enduml

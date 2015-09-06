@@ -74,7 +74,6 @@ class LizardSpockGameTest extends Specification {
         private Random randomMock
 
         LizardSpockGameForTest(Random randomMock, GameRules gameRulesMock) {
-            super()
             this.randomMock = randomMock
             this.gameRulesMock = gameRulesMock
         }

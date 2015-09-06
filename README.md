@@ -37,13 +37,12 @@ How to build the project or a distribution
 -------------------------------------------
 Depending on if you want to
 * merely compile the project and execute its tests (`test`),
-* create a locally installed distribution (`installDist`),
-* make distributables as TAR and ZIP files (`assemble`), or
-* do everything of the above (`build`)
+* create a locally installed distribution (`installDist`), or
+* make distributables as TAR and ZIP files (`assemble`)
 
 you need to run the Gradle Wrapper on your command line with the according tasks:
 ```
-./gradlew clean test|installDist|assemble|build
+./gradlew clean test|installDist|assemble
 ```
 
 How to play the game

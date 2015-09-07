@@ -24,7 +24,7 @@ public class GameRegistry {
         return nameToGame.get(name);
     }
 
-    public Collection<? extends Game> getGames() {
+    public Collection<Game> getGames() {
         return nameToGame.values();
     }
 

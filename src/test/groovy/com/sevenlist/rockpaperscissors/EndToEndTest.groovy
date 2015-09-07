@@ -35,7 +35,7 @@ class EndToEndTest extends Specification {
         outputAsString =~ RESULT_REGEX
     }
 
-    def "letting the computer play the classic game works as expected"() {
+    def "let the computer play the classic game works as expected"() {
         given:
         args = ['computer']
 
@@ -52,7 +52,7 @@ class EndToEndTest extends Specification {
         outputAsString =~ RESULT_REGEX
     }
 
-    def "playing the lizard spock game as a player works as expected"() {
+    def "playing the lizard spock game works as expected"() {
         given:
         args = ['lizard-spock', 'lizard']
 
@@ -69,7 +69,7 @@ class EndToEndTest extends Specification {
         outputAsString =~ RESULT_REGEX
     }
 
-    def "letting the computer play the lizard spock game works as expected"() {
+    def "let the computer play the lizard spock game works as expected"() {
         given:
         args = ['lizard-spock', 'computer']
 

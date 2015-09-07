@@ -109,7 +109,7 @@ The game variant needs than to be added in the `GameRegistry`.
 
 Outstanding improvements
 ------------------------
-* provide a nice GUI
+* provide a nice GUI - this should be easy as the data for the frontend is already available (see model class `RunOfPlay`)
 * consider using [Commons CLI](https://commons.apache.org/proper/commons-cli/) for parsing the command line
 * make the item the computer chooses more random
 * let [Lombok](https://projectlombok.org/) generate getters/setters, `equals()`, `hashCode()`, `toString()`, ...

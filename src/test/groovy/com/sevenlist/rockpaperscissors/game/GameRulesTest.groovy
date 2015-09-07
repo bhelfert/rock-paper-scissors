@@ -99,7 +99,7 @@ class GameRulesTest extends Specification {
         e.message.contains 'is not being beaten by Enum'
     }
 
-    def "beat description can be got when one exists for the items passed"() {
+    def "beats description can be got when one exists for the items passed"() {
         given:
         Map losingItemsMap = [:]
         losingItemsMap.put(rock, 'covers')

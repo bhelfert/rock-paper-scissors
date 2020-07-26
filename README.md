@@ -157,7 +157,7 @@ what has been tested.
 
 E.g. take a look at the `LizardSpockGameTest`:
 ```
-./build/reports/tests/classes/com.sevenlist.rockpaperscissors.game.lizardspock.LizardSpockGameTest.html
+./build/reports/tests/classes/LizardSpockGameTest.html
 ```
 
 Code coverage

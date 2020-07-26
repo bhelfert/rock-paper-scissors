@@ -4,7 +4,7 @@ apply plugin: 'org.kordamp.gradle.stats'
 apply plugin: "jacoco"
 
 applicationName = 'rockPaperScissors'
-mainClassName = 'com.sevenlist.rockpaperscissors.RockPaperScissors'
+mainClassName = 'de.bhelfert.rockpaperscissors.RockPaperScissors'
 
 buildscript {
     repositories {
